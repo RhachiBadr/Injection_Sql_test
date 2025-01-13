@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Injection Test</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>SQL Injection Test</h1>
+    <div class="container">
+        <form method="post">
+            <label for="sql_query">Enter SQL Query:</label>
+            <textarea id="sql_query" name="sql_query" rows="4" cols="50"></textarea><br>
+            <button type="submit">Analyze</button>
+        </form>
+          {% if prediction %}
+            <h2>Results:</h2>
+            <p><b>Query:</b> {{query}}</p>
+              <p><b>Prediction score:</b> {{prediction}}</p>
+              <p><b>Result:</b> {{ "SQL Injection Detected!" if  prediction | float > 0.5 else  "Query is Safe." }}</p>
+          {% endif %}
+    </div>
+</body>
+</html>
