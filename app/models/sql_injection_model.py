@@ -1,7 +1,7 @@
 import tensorflow as tf
 from tensorflow import keras
 from keras.preprocessing.text import Tokenizer
-from tensorflow.keras.utils import pad_sequences
+from keras.utils import pad_sequences
 import json
 
 class SQLInjectionModel:
